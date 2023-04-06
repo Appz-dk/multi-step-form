@@ -1,0 +1,44 @@
+.sidebar {
+  background-image: url("../../assets/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sidebar-step-circle {
+  margin-top: 2rem;
+}
+
+.sidebar-step-circle span {
+  display: grid;
+  place-items: center;
+  color: var(--White);
+  border: 1px solid var(--White);
+  width: 2rem;
+  aspect-ratio: 1;
+  border-radius: 9999vw;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.sidebar-step-circle span[data-active="true"] {
+  color: var(--Marine-blue);
+  background-color: var(--Light-blue);
+  border: none;
+}
+
+.sidebar-step-info {
+  display: none;
+}
+
+@media only screen and (min-width: 40em) {
+  .sidebar-step-info {
+    display: initial;
+  }
+
+  .sidebar {
+    background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+  }
+}

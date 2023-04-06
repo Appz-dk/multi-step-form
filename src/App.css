@@ -37,6 +37,10 @@ body {
   background-color: var(--bg-clr);
 }
 
+main {
+  height: 100vh;
+}
+
 /* Default button styling */
 button {
   color: var(--White);
