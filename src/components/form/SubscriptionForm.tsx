@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import { useMultistepForm } from "../../hooks/useMultistepForm";
 import PersonalInfoStep from "../formSteps/PersonalInfoStep";
 import { useForm } from "react-hook-form";
 import PlanStep from "../formSteps/PlanStep";
+
+import classes from "./SubscriptionForm.module.css";
 
 export type SubscriptionData = {
   name: string;
@@ -36,13 +37,15 @@ const SubscriptionForm = () => {
   console.log(errors);
 
   return (
-    <div>
+    <section className={classes["form-wrapper"]}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {step}
-        {!isLastStep && <button>next</button>}
-        {isLastStep && <button>confirm</button>}
+        <div className={classes["form-actions"]}>
+          {!isLastStep && <button>Next Step</button>}
+          {isLastStep && <button>confirm</button>}
+        </div>
       </form>
-    </div>
+    </section>
   );
 };
 

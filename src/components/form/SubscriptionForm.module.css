@@ -1,0 +1,26 @@
+.form-wrapper {
+  display: flex;
+  background-color: var(--White);
+  border-radius: var(--lg-radius);
+  padding: 1.5rem;
+  max-width: 95%;
+  margin-inline: auto;
+  box-shadow: 0 0 12px 4px var(--Light-gray);
+}
+
+.form-actions {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--White);
+}
+
+@media only screen and (min-width: 40em) {
+  .form-wrapper {
+    box-shadow: none;
+  }
+}
