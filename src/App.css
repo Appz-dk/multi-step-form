@@ -24,10 +24,30 @@
   --fs-500: 1.125rem;
   --fs-600: 1.5rem;
   --fs-700: 2rem;
+
+  /* Border Radius */
+  --sm-radius: 4px;
+  --md-radius: 8px;
+  --lg-radius: 12px;
 }
 
 body {
   font-size: var(--fs-400);
   font-family: var(--ff-primary);
   background-color: var(--bg-clr);
+}
+
+/* Default button styling */
+button {
+  color: var(--White);
+  background-color: var(--Marine-blue);
+  border-radius: var(--sm-radius);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+}
+
+button:hover {
+  filter: brightness(150%);
 }
