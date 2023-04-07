@@ -33,6 +33,18 @@
 
 .sidebar-step-info {
   display: none;
+  text-transform: uppercase;
+}
+
+.sidebar-step-info p {
+  color: var(--White);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.sidebar-step-info span {
+  color: var(--Cool-gray);
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 40em) {

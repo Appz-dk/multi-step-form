@@ -1,20 +1,21 @@
+import { formSteps } from "../../types";
 import classes from "./Sidebar.module.css";
 
-const STEPS = [1, 2, 3, 4];
+type SidebarProps = {
+  currentStep: number;
+};
 
-const currentStep = 1;
-
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({ currentStep }) => {
   return (
     <div className={classes.sidebar}>
-      {STEPS.map((step) => (
-        <div key={step}>
+      {formSteps.map((step) => (
+        <div key={step.stepDescription}>
           <div className={classes["sidebar-step-circle"]}>
-            <span data-active={currentStep === step}>{step}</span>
+            <span data-active={currentStep === step.stepNumber}>{step.stepNumber}</span>
           </div>
           <div className={classes["sidebar-step-info"]}>
-            <span>STEP 1</span>
-            <p>YOUR INFO</p>
+            <span>{`Step ${step.stepNumber}`}</span>
+            <p>{step.stepDescription}</p>
           </div>
         </div>
       ))}
