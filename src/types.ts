@@ -1,6 +1,8 @@
 import { RegisterOptions } from "react-hook-form"
 import { SubscriptionData } from "./components/form/SubscriptionForm";
-import AcadeIcon from "./assets/images/icon-arcade.svg"
+import ArcadeIcon from "./assets/images/icon-arcade.svg"
+import AdvancedIcon from "./assets/images/icon-advanced.svg"
+import ProIcon from "./assets/images/icon-pro.svg"
 
 export type PersonalInfo = {
   inputValue: keyof SubscriptionData;
@@ -72,28 +74,28 @@ export type Plan = {
 
 export const plans: Plan[] = [
   {
-    id: 'monthly_arcade',
+    id: 'arcade',
     name: 'Arcade',
     monthlyPrice: 9,
     yearlyPrice: 90,
     yearlyBonusMessage: '2 months free',
-    icon: 'arcade',
+    icon: ArcadeIcon,
   },
   {
-    id: 'monthly_advanced',
+    id: 'advanced',
     name: 'Advanced',
     monthlyPrice: 12,
     yearlyPrice: 120,
     yearlyBonusMessage: '2 months free',
-    icon: 'advanced',
+    icon: AdvancedIcon,
   },
   {
-    id: 'monthly_pro',
+    id: 'pro',
     name: 'Pro',
     monthlyPrice: 15,
     yearlyPrice: 150,
     yearlyBonusMessage: '2 months free',
-    icon: 'pro',
+    icon: ProIcon,
   },
 ]
 
