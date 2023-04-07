@@ -1,5 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
+import { personalInfo } from "../../../config";
 import classes from "./PersonalInfoStep.module.css";
 
 type PersonalInfoStepProps = {
@@ -13,7 +14,27 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
       <h1>Personal Info</h1>
       <p>Please provide your name, email address, and phone number.</p>
       <fieldset className={classes["personal-info-fieldset"]}>
-        <div>
+        {personalInfo.map((info) => (
+          <div>
+            <div className={classes["label-container"]}>
+              <label>{info.label}</label>
+              {errors[info.inputValue] && (
+                <span aria-role="alert">{errors[info.inputValue]?.message}</span>
+              )}
+            </div>
+            <input placeholder={info.placeholder} {...register(info.inputValue, info.errorObj)} />
+          </div>
+        ))}
+      </fieldset>
+    </div>
+  );
+};
+
+export default PersonalInfoStep;
+
+// Maybe more clear solution than the mapping above
+{
+  /* <div>
           <div className={classes["label-container"]}>
             <label>Name</label>
             {errors.name && <span aria-role="alert">{errors.name.message}</span>}
@@ -70,10 +91,5 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
               },
             })}
           />
-        </div>
-      </fieldset>
-    </div>
-  );
-};
-
-export default PersonalInfoStep;
+        </div> */
+}

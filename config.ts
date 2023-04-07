@@ -1,3 +1,63 @@
+import { RegisterOptions } from "react-hook-form"
+import { SubscriptionData } from "./src/components/form/SubscriptionForm";
+
+export type PersonalInfo = {
+  inputValue: keyof SubscriptionData;
+  type?: string;
+  placeholder: string;
+  label: string;
+  errorObj?: RegisterOptions<SubscriptionData, keyof SubscriptionData>
+}
+
+export const personalInfo: PersonalInfo[] = [
+  {
+    inputValue: "name",
+    label: "Name",
+    placeholder: "e.g. Stephen King",
+    errorObj: {
+      required: {
+        value: true,
+        message: "This field is required",
+      },
+    }
+  },
+  {
+    inputValue: "email",
+    type: "email",
+    label: "Email Address",
+    placeholder: "e.g stephenking@lorem.com",
+    errorObj: {
+      required: {
+        value: true,
+        message: "This field is required",
+      },
+      pattern: {
+        value: /^\S+@\S+$/i,
+        message: "Invalid Email",
+      },
+    }
+  },
+  {
+    inputValue: "phoneNumber",
+    label: "Phone Number",
+    placeholder: "e.g. 12345678",
+    errorObj: {
+      required: {
+        value: true,
+        message: "This field is required",
+      },
+      pattern: {
+        value: /^\d+$/,
+        message: "Only contain numbers",
+      },
+      minLength: {
+        value: 8,
+        message: "Minimum length 8",
+      },
+    }
+  },
+]
+
 export type PriceType = 'monthly' | 'yearly'
 
 export type Plan = {
