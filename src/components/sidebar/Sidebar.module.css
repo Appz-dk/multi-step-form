@@ -1,6 +1,7 @@
 .sidebar {
   background-image: url("../../assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
+  background-size: cover;
   height: 30%;
   display: flex;
   justify-content: center;

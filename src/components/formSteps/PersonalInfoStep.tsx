@@ -1,5 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
+import classes from "./PersonalInfoStep.module.css";
 
 type PersonalInfoStepProps = {
   register: UseFormRegister<SubscriptionData>;
@@ -8,12 +9,15 @@ type PersonalInfoStepProps = {
 
 const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors }) => {
   return (
-    <div>
+    <div className={classes["personal-info"]}>
       <h1>Personal Info</h1>
       <p>Please provide your name, email address, and phone number.</p>
-      <fieldset>
+      <fieldset className={classes["personal-info-fieldset"]}>
         <div>
-          <label>Name</label>
+          <div className={classes["label-container"]}>
+            <label>Name</label>
+            {errors.name && <span aria-role="alert">{errors.name.message}</span>}
+          </div>
           <input
             placeholder="e.g. Stephen King"
             {...register("name", {
@@ -23,10 +27,12 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
               },
             })}
           />
-          {errors.name && <span>{errors.name.message}</span>}
         </div>
         <div>
-          <label>Email</label>
+          <div className={classes["label-container"]}>
+            <label>Email Address</label>
+            {errors.email && <span aria-role="alert">{errors.email.message}</span>}
+          </div>
           <input
             type="email"
             placeholder="e.g stephenking@lorem.com"
@@ -41,10 +47,12 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
               },
             })}
           />
-          {errors.email && <span>{errors.email.message}</span>}
         </div>
         <div>
-          <label>Phone Number</label>
+          <div className={classes["label-container"]}>
+            <label>Phone Number</label>
+            {errors.phoneNumber && <span aria-role="alert">{errors.phoneNumber.message}</span>}
+          </div>
           <input
             placeholder="e.g. 12345678"
             {...register("phoneNumber", {
@@ -54,15 +62,14 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
               },
               pattern: {
                 value: /^\d+$/,
-                message: "Should only contain numbers",
+                message: "Only contain numbers",
               },
               minLength: {
                 value: 8,
-                message: "Minimum length of 8 numbers",
+                message: "Minimum length 8",
               },
             })}
           />
-          {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
         </div>
       </fieldset>
     </div>

@@ -3,9 +3,11 @@
   background-color: var(--White);
   border-radius: var(--lg-radius);
   padding: 1.5rem;
-  max-width: 95%;
+  width: 90%;
+  max-width: 25rem;
   margin-inline: auto;
-  box-shadow: 0 0 12px 4px var(--Light-gray);
+  margin-top: -5.5rem;
+  box-shadow: 0 0 12px 4px rgba(99, 99, 99, 0.2);
 }
 
 .form-actions {
