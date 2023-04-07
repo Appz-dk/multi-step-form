@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import PlanStep from "../formSteps/PlanStep";
 
 import classes from "./SubscriptionForm.module.css";
+import Sidebar from "../sidebar/Sidebar";
 
 export type SubscriptionData = {
   name: string;
@@ -23,7 +24,7 @@ const SubscriptionForm = () => {
     mode: "onSubmit",
   });
 
-  const { step, isLastStep, nextStep } = useMultistepForm([
+  const { step, isLastStep, nextStep, currentStepIndex } = useMultistepForm([
     <PersonalInfoStep register={register} errors={errors} />,
     <PlanStep register={register} errors={errors} />,
   ]);
@@ -35,15 +36,18 @@ const SubscriptionForm = () => {
   };
 
   return (
-    <section className={classes["form-wrapper"]}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {step}
-        <div className={classes["form-actions"]}>
-          {!isLastStep && <button>Next Step</button>}
-          {isLastStep && <button>confirm</button>}
-        </div>
-      </form>
-    </section>
+    <>
+      <Sidebar currentStep={currentStepIndex + 1} />
+      <section className={classes["form-wrapper"]}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {step}
+          <div className={classes["form-actions"]}>
+            {!isLastStep && <button>Next Step</button>}
+            {isLastStep && <button>confirm</button>}
+          </div>
+        </form>
+      </section>
+    </>
   );
 };
 
