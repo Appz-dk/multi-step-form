@@ -10,7 +10,7 @@ export type SubscriptionData = {
   email: string;
   phoneNumber: string;
   planId: string;
-  billingType: string;
+  isMonthly: boolean;
   addons: string[];
 };
 
@@ -33,8 +33,6 @@ const SubscriptionForm = () => {
 
     if (isLastStep) console.log(data);
   };
-
-  console.log(errors);
 
   return (
     <section className={classes["form-wrapper"]}>

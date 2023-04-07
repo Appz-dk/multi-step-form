@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
       {STEPS.map((step) => (
-        <>
+        <div key={step}>
           <div className={classes["sidebar-step-circle"]}>
             <span data-active={currentStep === step}>{step}</span>
           </div>
@@ -16,7 +16,7 @@ const Sidebar = () => {
             <span>STEP 1</span>
             <p>YOUR INFO</p>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

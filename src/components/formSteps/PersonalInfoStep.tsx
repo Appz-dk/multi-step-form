@@ -1,6 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
-import { personalInfo } from "../../../config";
+import { personalInfo } from "../../types";
 import classes from "./PersonalInfoStep.module.css";
 
 type PersonalInfoStepProps = {
@@ -15,11 +15,11 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
       <p>Please provide your name, email address, and phone number.</p>
       <fieldset className={classes["personal-info-fieldset"]}>
         {personalInfo.map((info) => (
-          <div>
+          <div key={info.inputValue}>
             <div className={classes["label-container"]}>
               <label>{info.label}</label>
               {errors[info.inputValue] && (
-                <span aria-role="alert">{errors[info.inputValue]?.message}</span>
+                <span role="alert">{errors[info.inputValue]?.message}</span>
               )}
             </div>
             <input placeholder={info.placeholder} {...register(info.inputValue, info.errorObj)} />

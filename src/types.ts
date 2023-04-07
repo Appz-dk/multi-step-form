@@ -1,5 +1,6 @@
 import { RegisterOptions } from "react-hook-form"
-import { SubscriptionData } from "./src/components/form/SubscriptionForm";
+import { SubscriptionData } from "./components/form/SubscriptionForm";
+import AcadeIcon from "./assets/images/icon-arcade.svg"
 
 export type PersonalInfo = {
   inputValue: keyof SubscriptionData;
