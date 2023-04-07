@@ -4,6 +4,30 @@ import ArcadeIcon from "./assets/images/icon-arcade.svg"
 import AdvancedIcon from "./assets/images/icon-advanced.svg"
 import ProIcon from "./assets/images/icon-pro.svg"
 
+export type FormStep = {
+  stepNumber: number;
+  stepDescription: string;
+}
+
+export const formSteps: FormStep[] = [
+  {
+    stepNumber: 1,
+    stepDescription: "Your info"
+  },
+  {
+    stepNumber: 2,
+    stepDescription: "Select plan"
+  },
+  {
+    stepNumber: 3,
+    stepDescription: "add-ons"
+  },
+  {
+    stepNumber: 4,
+    stepDescription: "Summary"
+  },
+]
+
 export type PersonalInfo = {
   inputValue: keyof SubscriptionData;
   type?: string;
