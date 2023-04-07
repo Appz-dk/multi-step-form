@@ -1,0 +1,128 @@
+.plan h1 {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.plan > p {
+  color: var(--Cool-gray);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.plan-fieldset {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.plan-fieldset img {
+  height: fit-content;
+}
+
+.plan-radio {
+  border: 1px solid var(--Light-gray);
+  border-radius: var(--md-radius);
+  padding: 0.75rem;
+  cursor: pointer;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.plan-radio[data-active="true"] {
+  background-color: var(--Magnolia);
+  border-color: var(--Purplish-blue);
+}
+
+.plan-radio:hover,
+.plan-radio:active {
+  border-color: var(--Purplish-blue);
+}
+
+.plan-radio input {
+  display: none;
+}
+
+.plan-type {
+  color: var(--Marine-blue);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.plan-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-price {
+  color: var(--Cool-gray);
+  font-size: 0.9rem;
+}
+
+.plan-discount {
+  color: var(--Marine-blue);
+  font-size: 0.85rem;
+  font-weight: 500;
+  filter: brightness(110%);
+}
+
+/* Plan Slider */
+.plan-period {
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+
+.plan-period[aria-selected="false"] {
+  color: var(--Cool-gray);
+}
+
+.plan-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--sm-radius);
+  background-color: var(--Magnolia);
+  margin-top: 1.5rem;
+}
+
+.test {
+  width: 100%;
+}
+
+.slider {
+  --slider-height: 1.5rem;
+  --slider-width: 3rem;
+  position: relative;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  cursor: pointer;
+  border-radius: 9999vw;
+  background-color: var(--Marine-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  --width: calc(var(--slider-width) * 0.35);
+  position: absolute;
+  content: "";
+  width: var(--width);
+  aspect-ratio: 1;
+  top: calc(var(--width) / 5);
+  left: 5px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
+  -ms-transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
+  transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
+}
