@@ -11,7 +11,7 @@
 }
 
 .form-actions {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: flex-end;
   bottom: 0;

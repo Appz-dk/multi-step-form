@@ -10,7 +10,7 @@ export type SubscriptionData = {
   email: string;
   phoneNumber: string;
   planId: string;
-  isMonthly: boolean;
+  isYearly: boolean;
   addons: string[];
 };
 
