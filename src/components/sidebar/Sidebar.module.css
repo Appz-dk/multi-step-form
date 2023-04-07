@@ -2,7 +2,8 @@
   background-image: url("../../assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 30%;
+  height: 25%;
+  min-height: 10rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
