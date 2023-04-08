@@ -1,0 +1,77 @@
+.confirm h1 {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.confirm > p {
+  color: var(--Cool-gray);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-prices {
+  background-color: var(--Magnolia);
+  padding: 0.75rem;
+  border-radius: var(--md-radius);
+}
+
+.confirm-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--Marine-blue);
+  margin-bottom: 0.5rem;
+}
+
+.confirm-plan h3 {
+  font-weight: 500;
+}
+
+.confirm-plan button {
+  all: unset;
+  color: var(--Cool-gray);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.confirm-plan span {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.confirm-addons {
+  border-top: 1px solid var(--Light-gray);
+  color: var(--Cool-gray);
+  font-size: 0.85rem;
+}
+
+.confirm-addons div {
+  margin-top: 0.5rem;
+}
+
+.confirm-addons div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirm-addons span {
+  color: var(--Marine-blue);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.confirm-total {
+  display: flex;
+  justify-content: space-between;
+  color: var(--Cool-gray);
+  padding-inline: 0.5rem;
+  padding-top: 1rem;
+}
+
+.confirm-total span {
+  color: var(--Purplish-blue);
+  font-weight: 700;
+}
