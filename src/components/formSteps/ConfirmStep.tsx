@@ -79,7 +79,7 @@ const ConfirmStep: React.FC<ConfirmStepProps> = ({ goToStep, getValues }) => {
         {showAddons && (
           <div className={classes["confirm-addons"]}>
             {subscriptionData.addons?.map((addon) => (
-              <div>
+              <div key={addon.id}>
                 <p>{addon.name}</p>
                 <span>{isYearly ? `+$${addon.yearlyPrice}/yr` : `+$${addon.monthlyPrice}/mo`}</span>
               </div>
