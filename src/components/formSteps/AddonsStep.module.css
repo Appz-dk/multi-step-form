@@ -36,7 +36,7 @@
 }
 
 .addon-label h3 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--Marine-blue);
 }
 
@@ -49,4 +49,26 @@
   margin-left: auto;
   font-size: 0.85rem;
   color: var(--Purplish-blue);
+}
+
+/* Styling the checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid var(--Cool-gray);
+  border-radius: var(--sm-radius);
+}
+
+input[type="checkbox"]:checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Purplish-blue);
+}
+
+input[type="checkbox"]:checked:after {
+  content: "✔";
+  color: var(--White);
+  font-size: 0.75rem;
 }

@@ -36,7 +36,6 @@ const AddonsStep: React.FC<AddonsStepProps> = ({ register, getValues }) => {
             data-checked={addons.includes(addon.id)}
           >
             <input
-              defaultChecked={idx === 0}
               className={classes.test}
               type="checkbox"
               value={addon.id}
