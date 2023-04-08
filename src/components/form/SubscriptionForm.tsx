@@ -6,7 +6,7 @@ import PlanStep from "../formSteps/PlanStep";
 import classes from "./SubscriptionForm.module.css";
 import Sidebar from "../sidebar/Sidebar";
 import AddonsStep from "../formSteps/AddonsStep";
-import { planAddons, plans } from "../../types";
+import { planAddons, plans } from "../../formData";
 
 export type SubscriptionData = {
   name: string;

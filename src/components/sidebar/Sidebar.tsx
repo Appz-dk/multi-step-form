@@ -1,4 +1,4 @@
-import { formSteps } from "../../types";
+import { formSteps } from "../../formData";
 import classes from "./Sidebar.module.css";
 
 type SidebarProps = {

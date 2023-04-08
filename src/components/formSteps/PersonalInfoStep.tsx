@@ -1,6 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
-import { personalInfo } from "../../types";
+import { personalInfo } from "../../formData";
 import classes from "./PersonalInfoStep.module.css";
 
 type PersonalInfoStepProps = {

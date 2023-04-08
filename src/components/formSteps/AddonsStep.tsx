@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { UseFormRegister, UseFormGetValues } from "react-hook-form";
-import { planAddons } from "../../types";
+import { planAddons } from "../../formData";
 import { SubscriptionData } from "../form/SubscriptionForm";
 import classes from "./AddonsStep.module.css";
 
