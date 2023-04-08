@@ -1,20 +1,19 @@
 import { useState } from "react";
-import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { FieldErrors, UseFormGetValues, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
 import classes from "./PlanStep.module.css";
-
-import arcadeIcon from "../../assets/images/icon-arcade.svg";
-import advancedIcon from "../../assets/images/icon-advanced.svg";
 import { plans } from "../../types";
 
 type PlanStepProps = {
   register: UseFormRegister<SubscriptionData>;
-  errors: FieldErrors<SubscriptionData>;
+  getValues: UseFormGetValues<SubscriptionData>;
 };
 
-const PlanStep: React.FC<PlanStepProps> = ({ register, errors }) => {
-  const [activePlan, setActivePlan] = useState("arcade");
-  const [isMonthly, setIsMonthly] = useState(true);
+const PlanStep: React.FC<PlanStepProps> = ({ register, getValues }) => {
+  const selectedPlan = getValues("planId");
+  const formIsYearly = getValues("isYearly");
+  const [activePlan, setActivePlan] = useState(selectedPlan || "arcade");
+  const [isMonthly, setIsMonthly] = useState(!formIsYearly);
 
   return (
     <div className={classes["plan"]}>
@@ -28,7 +27,12 @@ const PlanStep: React.FC<PlanStepProps> = ({ register, errors }) => {
             data-active={activePlan === plan.id}
             onClick={() => setActivePlan(plan.id)}
           >
-            <input type="radio" aria-selected="true" {...register("planId")} value={plan.id} />
+            <input
+              type="radio"
+              aria-selected={activePlan === plan.id}
+              {...register("planId")}
+              value={plan.id}
+            />
             <img src={plan.icon} />
             <div className={classes["plan-info"]}>
               <h3 className={classes["plan-type"]}>{plan.name}</h3>
