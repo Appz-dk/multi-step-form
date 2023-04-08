@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FieldErrors, UseFormGetValues, UseFormRegister } from "react-hook-form";
+import { UseFormGetValues, UseFormRegister } from "react-hook-form";
 import { SubscriptionData } from "../form/SubscriptionForm";
 import classes from "./PlanStep.module.css";
 import { plans } from "../../types";
