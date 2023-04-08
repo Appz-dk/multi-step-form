@@ -13,12 +13,22 @@
 .form-actions {
   position: fixed;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   bottom: 0;
   left: 0;
   padding: 1rem;
   width: 100%;
   background-color: var(--White);
+}
+
+.form-actions-next-step {
+  margin-left: auto;
+}
+
+.form-actions-prev-step {
+  background-color: transparent;
+  color: var(--Cool-gray);
+  font-weight: 500;
 }
 
 @media only screen and (min-width: 40em) {
