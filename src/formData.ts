@@ -123,10 +123,9 @@ export const plans: Plan[] = [
   },
 ]
 
-// export const plansById = plans.reduce(
-//   (plans, plan) => ({ ...plans, [plan.id]: plan }),
-//   {},
-// )
+export const getPlanById = (id: string) => {
+  return plans.find(plan => plan.id === id)
+}
 
 export type PlanAddon = {
   id: string
@@ -159,3 +158,7 @@ export const planAddons: PlanAddon[] = [
     yearlyPrice: 20,
   },
 ]
+
+export const getPlanAddonsByIds = (idArr: string[]) => {
+  return planAddons.filter(addon => idArr.includes(addon.id))
+}
