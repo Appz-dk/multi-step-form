@@ -1,0 +1,24 @@
+.final-step {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+  padding-block: 2rem;
+}
+
+.final-step > div {
+  padding: 0.5rem;
+}
+
+.final-step img {
+  max-width: 3rem;
+}
+
+.final-step h1 {
+  color: var(--Marine-blue);
+}
+
+.final-step p {
+  color: var(--Cool-gray);
+  text-align: center;
+  font-size: 0.95rem;
+}
