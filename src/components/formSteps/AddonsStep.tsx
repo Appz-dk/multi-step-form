@@ -29,7 +29,7 @@ const AddonsStep: React.FC<AddonsStepProps> = ({ register, getValues }) => {
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
       <fieldset className={classes["addon-fieldset"]}>
-        {planAddons.map((addon, idx) => (
+        {planAddons.map((addon) => (
           <label
             key={addon.id}
             className={classes["addon-label"]}
