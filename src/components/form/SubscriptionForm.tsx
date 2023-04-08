@@ -6,6 +6,7 @@ import PlanStep from "../formSteps/PlanStep";
 import classes from "./SubscriptionForm.module.css";
 import Sidebar from "../sidebar/Sidebar";
 import AddonsStep from "../formSteps/AddonsStep";
+import { planAddons, plans } from "../../types";
 
 export type SubscriptionData = {
   name: string;
@@ -24,11 +25,16 @@ const SubscriptionForm = () => {
     getValues,
   } = useForm<SubscriptionData>({
     mode: "onSubmit",
+    defaultValues: {
+      addons: [planAddons[0].id],
+      isYearly: false,
+      planId: plans[0].id,
+    },
   });
 
   const { step, isLastStep, isFirstStep, nextStep, prevStep, currentStepIndex } = useMultistepForm([
     <PersonalInfoStep register={register} errors={errors} />,
-    <PlanStep register={register} errors={errors} />,
+    <PlanStep register={register} getValues={getValues} />,
     <AddonsStep register={register} getValues={getValues} />,
   ]);
 
