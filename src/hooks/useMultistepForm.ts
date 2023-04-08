@@ -16,6 +16,8 @@ export const useMultistepForm = (steps: ReactNode[]) => {
   }
 
   const goToStep = (index: number) => {
+    // Subtracting 1 here to go from steps numbers to index based numbering
+    index -= 1;
     if (index >= steps.length || index < 0) return
     setCurrentStepIndex(index)
   }
