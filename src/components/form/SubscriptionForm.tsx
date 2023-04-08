@@ -8,6 +8,8 @@ import Sidebar from "../sidebar/Sidebar";
 import AddonsStep from "../formSteps/AddonsStep";
 import { planAddons, plans } from "../../formData";
 import ConfirmStep from "../formSteps/ConfirmStep";
+import FinalStep from "../formSteps/FinalStep";
+import { useState } from "react";
 
 export type SubscriptionData = {
   name: string;
@@ -19,6 +21,7 @@ export type SubscriptionData = {
 };
 
 const SubscriptionForm = () => {
+  const [formIsDone, setFormIsDone] = useState(false);
   const {
     handleSubmit,
     register,
@@ -44,7 +47,10 @@ const SubscriptionForm = () => {
   const onSubmit = (data: SubscriptionData) => {
     nextStep();
 
-    if (isLastStep) console.log(data);
+    if (isLastStep) {
+      console.log(`"data sent to backend:"`, data);
+      setFormIsDone(true);
+    }
   };
 
   function handleGoToStep(step: number) {
@@ -55,25 +61,30 @@ const SubscriptionForm = () => {
     <>
       <Sidebar currentStep={currentStepIndex + 1} />
       <section className={classes["form-wrapper"]}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {step}
-          {/* Navigation btns */}
-          <div className={classes["form-actions"]}>
-            {!isFirstStep && (
-              <button
-                className={classes["form-actions-prev-step"]}
-                type="button"
-                onClick={prevStep}
-              >
-                Go Back
-              </button>
-            )}
-            {!isLastStep && (
-              <button className={classes["form-actions-next-step"]}>Next Step</button>
-            )}
-            {isLastStep && <button>confirm</button>}
-          </div>
-        </form>
+        <>
+          {!formIsDone && (
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {step}
+              {/* Navigation btns */}
+              <div className={classes["form-actions"]}>
+                {!isFirstStep && (
+                  <button
+                    className={classes["form-actions-prev-step"]}
+                    type="button"
+                    onClick={prevStep}
+                  >
+                    Go Back
+                  </button>
+                )}
+                {!isLastStep && (
+                  <button className={classes["form-actions-next-step"]}>Next Step</button>
+                )}
+                {isLastStep && <button>confirm</button>}
+              </div>
+            </form>
+          )}
+          {formIsDone && <FinalStep />}
+        </>
       </section>
     </>
   );
