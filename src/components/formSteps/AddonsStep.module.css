@@ -1,0 +1,52 @@
+.addons h1 {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.addons > p {
+  color: var(--Cool-gray);
+  margin-bottom: 1rem;
+}
+
+.addon-fieldset {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.addon-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--Cool-gray);
+  border-radius: var(--md-radius);
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.addon-label:hover {
+  border-color: var(--Purplish-blue);
+}
+
+.addon-label[data-checked="true"] {
+  background-color: var(--Magnolia);
+  border-color: var(--Purplish-blue);
+}
+
+.addon-label h3 {
+  font-size: 0.95rem;
+  color: var(--Marine-blue);
+}
+
+.addon-label p {
+  font-size: 0.75rem;
+  color: var(--Cool-gray);
+}
+
+.addon-label span {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--Purplish-blue);
+}
