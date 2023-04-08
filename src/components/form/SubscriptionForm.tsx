@@ -7,6 +7,7 @@ import classes from "./SubscriptionForm.module.css";
 import Sidebar from "../sidebar/Sidebar";
 import AddonsStep from "../formSteps/AddonsStep";
 import { planAddons, plans } from "../../formData";
+import ConfirmStep from "../formSteps/ConfirmStep";
 
 export type SubscriptionData = {
   name: string;
@@ -32,11 +33,13 @@ const SubscriptionForm = () => {
     },
   });
 
-  const { step, isLastStep, isFirstStep, nextStep, prevStep, currentStepIndex } = useMultistepForm([
-    <PersonalInfoStep register={register} errors={errors} />,
-    <PlanStep register={register} getValues={getValues} />,
-    <AddonsStep register={register} getValues={getValues} />,
-  ]);
+  const { step, isLastStep, isFirstStep, nextStep, prevStep, currentStepIndex, goToStep } =
+    useMultistepForm([
+      <PersonalInfoStep register={register} errors={errors} />,
+      <PlanStep register={register} getValues={getValues} />,
+      <AddonsStep register={register} getValues={getValues} />,
+      <ConfirmStep goToStep={handleGoToStep} getValues={getValues} />,
+    ]);
 
   const onSubmit = (data: SubscriptionData) => {
     nextStep();
@@ -44,12 +47,17 @@ const SubscriptionForm = () => {
     if (isLastStep) console.log(data);
   };
 
+  function handleGoToStep(step: number) {
+    goToStep(step);
+  }
+
   return (
     <>
       <Sidebar currentStep={currentStepIndex + 1} />
       <section className={classes["form-wrapper"]}>
         <form onSubmit={handleSubmit(onSubmit)}>
           {step}
+          {/* Navigation btns */}
           <div className={classes["form-actions"]}>
             {!isFirstStep && (
               <button
