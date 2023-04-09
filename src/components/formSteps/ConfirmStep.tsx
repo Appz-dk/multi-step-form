@@ -69,7 +69,7 @@ const ConfirmStep: React.FC<ConfirmStepProps> = ({ goToStep, getValues }) => {
       <div className={classes["confirm-prices"]}>
         <div className={classes["confirm-plan"]}>
           <div>
-            <h3>Arcade (Monthly)</h3>
+            <h3>Arcade ({isYearly ? "Yearly" : "Monthly"})</h3>
             <button type="button" onClick={() => goToStep(2)}>
               Change
             </button>
