@@ -23,7 +23,7 @@
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 1.5rem;
-  --fs-700: 2rem;
+  --fs-700: 1.75rem;
 
   /* Border Radius */
   --sm-radius: 4px;
@@ -38,7 +38,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Default button styling */
@@ -54,4 +54,11 @@ button {
 
 button:hover {
   filter: brightness(150%);
+}
+
+@media screen and (min-width: 50em) {
+  .App {
+    display: grid;
+    place-items: center;
+  }
 }

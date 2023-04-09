@@ -24,8 +24,16 @@
   color: var(--Marine-blue);
   padding: 0.5rem 1rem;
   width: 100%;
-  border: 1px solid var(--Cool-gray);
-  border-radius: var(--sm-radius);
+  border: 1px solid var(--Light-gray);
+  border-radius: var(--md-radius);
+  margin-top: 0.25rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.personal-info-fieldset input:hover,
+.personal-info-fieldset input:focus {
+  border-color: var(--Purplish-blue);
 }
 
 .label-container {
@@ -34,5 +42,20 @@
 }
 
 .label-container span {
-  color: hsl(0, 100%, 65%);
+  color: var(--Strawberry-red);
+}
+
+.personal-info-fieldset .input-error {
+  border-color: var(--Strawberry-red);
+}
+
+@media screen and (min-width: 50em) {
+  .personal-info-fieldset {
+    margin-top: 2rem;
+  }
+
+  .personal-info h1 {
+    font-size: var(--fs-700);
+    margin-bottom: 0.25rem;
+  }
 }

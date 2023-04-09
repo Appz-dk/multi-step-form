@@ -1,9 +1,12 @@
-.sidebar {
+.sidebar-container {
   background-image: url("../../assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 25%;
-  min-height: 10rem;
+  height: 10rem;
+  max-height: 20%;
+}
+
+.sidebar {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -39,20 +42,39 @@
 .sidebar-step-info p {
   color: var(--White);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .sidebar-step-info span {
   color: var(--Cool-gray);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 50em) {
   .sidebar-step-info {
     display: initial;
   }
 
-  .sidebar {
+  .sidebar-container {
+    max-height: unset;
+    height: 100%;
     background-image: url("../../assets/images/bg-sidebar-desktop.svg");
+    max-width: 35%;
+    /* width: 20rem; */
+    border-radius: var(--md-radius);
+  }
+
+  .sidebar-step-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .sidebar {
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  .sidebar-step-circle {
+    margin: unset;
   }
 }

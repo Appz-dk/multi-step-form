@@ -58,7 +58,7 @@ const SubscriptionForm = () => {
   }
 
   return (
-    <>
+    <div className={classes["form-layout"]}>
       <Sidebar currentStep={currentStepIndex + 1} />
       <section className={classes["form-wrapper"]}>
         <>
@@ -86,7 +86,7 @@ const SubscriptionForm = () => {
           {formIsDone && <FinalStep />}
         </>
       </section>
-    </>
+    </div>
   );
 };
 

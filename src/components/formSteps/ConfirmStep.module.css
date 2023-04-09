@@ -75,3 +75,35 @@
   color: var(--Purplish-blue);
   font-weight: 700;
 }
+
+@media screen and (min-width: 50em) {
+  .confirm {
+    max-width: 100%;
+    width: 25rem;
+  }
+
+  .confirm h1 {
+    font-size: var(--fs-700);
+    margin-bottom: 0.25rem;
+  }
+
+  .confirm > p {
+    margin-bottom: 2rem;
+  }
+
+  .confirm-prices {
+    padding: 1.5rem;
+  }
+
+  .confirm-plan {
+    margin-bottom: 1rem;
+  }
+
+  .confirm-addons div {
+    margin-top: 1rem;
+  }
+
+  .confirm-total {
+    padding-top: 1.5rem;
+  }
+}

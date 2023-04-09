@@ -19,6 +19,7 @@
 
 .plan-fieldset img {
   height: fit-content;
+  max-height: 3rem;
 }
 
 .plan-radio {
@@ -125,4 +126,25 @@ input:checked + .slider:before {
   -webkit-transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
   -ms-transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
   transform: translateX(calc(var(--slider-width) - var(--width) * 1.6));
+}
+
+@media screen and (min-width: 50em) {
+  .plan-fieldset {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-block: 2rem;
+    max-width: 100%;
+    width: 30rem;
+  }
+
+  .plan-fieldset label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .plan h1 {
+    font-size: var(--fs-700);
+    margin-bottom: 0.25rem;
+  }
 }

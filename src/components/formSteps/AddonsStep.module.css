@@ -72,3 +72,23 @@ input[type="checkbox"]:checked:after {
   color: var(--White);
   font-size: 0.75rem;
 }
+
+@media screen and (min-width: 50em) {
+  .addons {
+    width: 25rem;
+    max-width: 100%;
+  }
+
+  .addons h1 {
+    font-size: var(--fs-700);
+    margin-bottom: 0.25rem;
+  }
+
+  .addons > p {
+    margin-bottom: 2rem;
+  }
+
+  .addon-label {
+    padding: 1rem;
+  }
+}

@@ -6,7 +6,7 @@
   width: 90%;
   max-width: 25rem;
   margin-inline: auto;
-  margin-top: -5.5rem;
+  margin-top: -4.5rem;
   box-shadow: 0 0 12px 4px rgba(99, 99, 99, 0.2);
 }
 
@@ -31,8 +31,41 @@
   font-weight: 500;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 50em) {
   .form-wrapper {
     box-shadow: none;
+    margin-top: unset;
+
+    max-width: 65%;
+    padding-inline: 0;
+    padding-left: 1rem;
+  }
+
+  .form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-inline: auto;
+
+    max-width: 90%;
+  }
+
+  .form-layout {
+    display: flex;
+    background-color: var(--White);
+    border-radius: var(--lg-radius);
+    padding: 1rem;
+    margin-inline: auto;
+    max-width: 90%;
+    width: 50rem;
+    height: 35rem;
+    max-height: 90%;
+
+    min-height: 30rem;
+  }
+
+  .form-actions {
+    position: initial;
+    padding: unset;
   }
 }

@@ -22,3 +22,11 @@
   text-align: center;
   font-size: 0.95rem;
 }
+
+@media screen and (min-width: 50em) {
+  .final-step {
+    align-content: center;
+    gap: 1rem;
+    padding-inline: 2rem;
+  }
+}

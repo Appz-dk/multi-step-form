@@ -14,17 +14,24 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
       <h1>Personal Info</h1>
       <p>Please provide your name, email address, and phone number.</p>
       <fieldset className={classes["personal-info-fieldset"]}>
-        {personalInfo.map((info) => (
-          <div key={info.inputValue}>
-            <div className={classes["label-container"]}>
-              <label>{info.label}</label>
-              {errors[info.inputValue] && (
-                <span role="alert">{errors[info.inputValue]?.message}</span>
-              )}
+        {personalInfo.map((info) => {
+          const inputHasError = errors[info.inputValue]?.message;
+          return (
+            <div key={info.inputValue}>
+              <div className={classes["label-container"]}>
+                <label>{info.label}</label>
+                {errors[info.inputValue] && (
+                  <span role="alert">{errors[info.inputValue]?.message}</span>
+                )}
+              </div>
+              <input
+                className={inputHasError ? classes["input-error"] : ""}
+                placeholder={info.placeholder}
+                {...register(info.inputValue, info.errorObj)}
+              />
             </div>
-            <input placeholder={info.placeholder} {...register(info.inputValue, info.errorObj)} />
-          </div>
-        ))}
+          );
+        })}
       </fieldset>
     </div>
   );
