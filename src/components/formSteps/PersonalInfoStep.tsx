@@ -14,7 +14,7 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
       <h1>Personal Info</h1>
       <p>Please provide your name, email address, and phone number.</p>
       <fieldset className={classes["personal-info-fieldset"]}>
-        {personalInfo.map((info) => {
+        {personalInfo.map((info, idx) => {
           const inputHasError = errors[info.inputValue]?.message;
           return (
             <div key={info.inputValue}>
@@ -25,6 +25,7 @@ const PersonalInfoStep: React.FC<PersonalInfoStepProps> = ({ register, errors })
                 )}
               </div>
               <input
+                autoFocus={idx === 0}
                 className={inputHasError ? classes["input-error"] : ""}
                 placeholder={info.placeholder}
                 {...register(info.inputValue, info.errorObj)}
