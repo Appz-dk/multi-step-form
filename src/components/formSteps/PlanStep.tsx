@@ -33,7 +33,7 @@ const PlanStep: React.FC<PlanStepProps> = ({ register, getValues }) => {
               {...register("planId")}
               value={plan.id}
             />
-            <img src={plan.icon} />
+            <img src={plan.icon} alt='Icon of a controller that "matches" the name' />
             <div className={classes["plan-info"]}>
               <h3 className={classes["plan-type"]}>{plan.name}</h3>
               <span className={classes["plan-price"]}>
